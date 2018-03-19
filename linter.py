@@ -50,14 +50,14 @@ class AnsibleLint(Linter):
 
     def find_errors(self, output):
         """Parse errors from linter's output.
+
         Display only errors for matching file
         ansible-lint parses given playbook and its dependent roles
 
-        # TODO: add ansible dependencies, so that we detect playbooks and then
-        # iterate over them to detect if given open file belongs to the role
-        # included in the playbook
-        # if yes, then run ansible-lint on those playbooks and process output
-
+        TODO: add ansible dependencies, so that we detect playbooks and then
+        iterate over them to detect if given open file belongs to the role
+        included in the playbook
+        if yes, then run ansible-lint on those playbooks and process output
         """
         pattern = r'^{}(.*)'.format(re.escape(self.filename))
 
